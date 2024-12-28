@@ -13,6 +13,9 @@ describe('Game2', function () {
     const { game } = await loadFixture(deployContractAndSetVariables);
 
     // press all the right switches to win this stage
+    await game.switchOn(20, { value: ethers.utils.parseEther("0.1") });
+    await game.switchOn(47, { value: ethers.utils.parseEther("0.1") });
+    await game.switchOn(212, { value: ethers.utils.parseEther("0.1") });
 
     await game.win();
 
